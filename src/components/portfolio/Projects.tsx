@@ -135,7 +135,8 @@ export function ProjectDetail({ project, onClose }: { project: Project | null; o
 
 export function Projects() {
   const [active, setActive] = useState<Project | null>(null);
-  const [first, ...rest] = projects;
+  const first = projects[0]!;
+  const rest = projects.slice(1);
   return (
     <Section id="projects">
       <SectionHeader eyebrow="Featured work" title="Things I've actually built" intro="Each one started with a real problem. Open a project for the case study." />
